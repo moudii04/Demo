@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Patient Information Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add Bootstrap CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Bootstrap Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="font-size: xx-large; font-weight: bolder;">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="showSection('personalInfo')">Personalien</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="showSection('antecedents')">Vorerkrankungen/Operationen</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="showSection('currentTreatment')">Aktuelle Behandlung</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="showSection('Tests')">Tests</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Content Sections -->
+  <div class="container">
+    <div id="personalInfo" class="content-section">
+      <!-- Personalien Content -->
+      <table>
+        <tr>
+          <td style="width: 20%;">Name</td>
+          <td>Salah Salah</td>
+        </tr>
+        <tr>
+          <td>Vorname</td>
+          <td>Mohamed Abd El Kader</td>
+        </tr>
+        <tr>
+          <td>Geburtsdatum</td>
+          <td>14/07/1962</td>
+        </tr>
+        <tr>
+          <td>Anschrift</td>
+          <td>Berliner Straße 22</td>
+        </tr>
+        <tr>
+          <td>Familienstand</td>
+          <td>Verheiratet</td>
+        </tr>
+        <tr>
+          <td>Kinder</td>
+          <td>0</td>
+        </tr>
+      </table>
+      <table>
+        <!-- ... -->
+      </table>
+    </div>
+
+    <div id="antecedents" class="content-section" style="display: none">
+      <!-- Antecedents Content -->
+      <table id="ATCD">
+          <thead>
+              <tr id="Table-title">
+                  <th style="text-align: center;font-weight: bold;">Datum</th>
+                  <th style="text-align: center">Vorerkrankungen/Operationen</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>2021</td>
+                  <td>Diskusprolaps L4 L5 konservativ behandelt</td>
+              </tr>
+              <tr>
+                  <td>2018</td>
+                  <td>Akute bakterielle Konjunktivitis</td>
+              </tr>
+              <tr>
+                  <td>2005</td>
+                  <td>Reynaud-syndrom</td>
+              </tr>
+              <tr>
+                  <td>1994</td>
+                  <td>Tibiaschaftfraktur behandelt mit Marknagelung links ohne Komplikationen</td>
+              </tr>
+              <tr>
+                  <td>1987</td>
+                  <td>Appendektomie ohne Komplikationen</td>
+              </tr>
+              <tr>
+                  <td>1981</td>
+                  <td>Pulmonale Tuberkulose</td>
+              </tr>
+              <tr>
+                <td>Jan 1971</td>
+                <td>Bakterielle Angina</td>
+              </tr>
+              <tr>
+                  <td>Feb/Sep/Nov 1970</td>
+                  <td>Bakterielle Angina</td>
+                </tr>
+                <tr>
+                  <td>Nov/Dez 1969</td>
+                  <td>Bakterielle Angina</td>
+                </tr>
+                <tr>
+                  <td>Okt 1967</td>
+                  <td>Bakterielle Angina</td>
+                </tr>
+
+          </tbody>
+      </table>
+  </div>
+  
+
+    <div id="currentTreatment" class="content-section" style="display: none;">
+      <!-- Current Treatment Content -->
+      <h1>Current Treatement</h1>
+      <h4>
+        <ul>
+          <li>Medic 1</li>
+          <li>Medic 2</li>
+          <li>Medic 3</li>
+          <li>Medic 4</li>
+          <li>Medic 5</li>
+          <li>Medic 6</li>
+        </ul>
+        </h4>
+      <!-- ... -->
+    </div>
+    
+    <div id="Tests" class="content-section" style="display: none;">
+      <!-- Current Treatment Content -->
+      <h1>Durchgeführte Tests</h1>
+      <h3>
+        <ul>
+          <li><a href ="https://post.healthline.com/wp-content/uploads/2022/01/CT-scan-of-the-abdomen-and-pelvis-body4.jpg">CT Scan</a></li>
+          <li><a href ="https://im.contentlounge.net/styles/manual_crop/s3/2019-11/FCAC514C-F4B1-4B99-AA4C-F0E8945F85D0.jpeg?im=AspectCrop%2Csize%3D%2816%2C9%29%2Cgravity%3DCenter%2CallowExpansion%2CBackgroundColor%2Ccolor%3Dtransparent&hash=c51cb464897ed636259793ef7715edaba81eef9173ca763e55e2f0a1f8cbfa84">Blutbild</a></li>
+          <li><a href ="https://stiftung-gesundheitswissen.de/sites/default/files/styles/fullwidth/public/2023-01/R%C3%B6ntgen_Oberk%C3%B6rper_Teaser.jpg.webp?itok=OCuPELYk">Röntgen</a></li>
+        </ul>
+        </h3>
+      <!-- ... -->
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Your Custom Script -->
+  <script src="script.js"></script>
+</body>
+</html>

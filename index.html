@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Landing Page with Animation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body {
+            background-image: url('back.jpg');
+            background-size: cover;
+        }
+
+        .content {
+            text-align: center;
+            margin-bottom: 150px;
+            padding: 0px;
+            opacity: 1; /* Start with opacity 1 to make content visible */
+            animation: fadeIn 3s ease forwards; /* Apply the animation */
+            z-index: 1; /* Ensure it's above the loader */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .logo {
+            width: 700px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .text-right {
+            text-align: center;
+            margin-left: 60px;
+            font-size: xx-large;
+            font-weight: bolder;
+            font-family: cursive;
+        }
+
+        /* Loading animation */
+        .loader {
+            border: 16px solid #cfcfcf; /* Light grey */
+            border-top: 16px solid #34dbb7; /* Blue */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            position: fixed;
+            top: 35%;
+            left: 45%;
+            display: none; /* Initially hidden */
+            z-index: 999; /* Ensure it's above everything else */
+        }
+        
+        #loader-text{
+            display:none;
+            font-family: cursive;
+            font-weight:bolder;
+            font-size:xx-large;
+            text-align: center;
+            margin-top:200px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader" id="loader"></div>
+    <div id="loader-text">Einen Moment bitte...</div>
+    <div class="content" id="content">
+        <img src="logo.png" alt="Your Logo" class="logo">
+        <div class="text-right">
+            <p>Geben Sie bitte Ihre Karte ein !</p>
+        </div>
+    </div>
+
+    <script>
+        document.body.onkeyup = function(e){
+            if(e.keyCode == 32){ // 32 is the keycode for spacebar
+                // Hide content
+                document.getElementById("content").style.display = "none";
+                // Display loader
+                document.getElementById("loader").style.display = "block";
+                document.getElementById("loader-text").style.display = "block";
+                // Redirect after delay
+                setTimeout(function() {
+                    window.location.href = 'demo.html';
+                }, 3000); // 3000 milliseconds = 3 seconds
+            }
+        }
+    </script>
+</body>
+</html>
